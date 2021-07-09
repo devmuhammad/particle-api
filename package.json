@@ -12,11 +12,11 @@
   "main": "index.js",
   "scripts": {
     "start": "express-artisan start",
+    "build": "express-artisan build",
     "test": "express-artisan test",
-    "build": "express-artisan build"
+    "postinstall": "patch-package"
   },
   "author": "Muhammed O. Shuaib",
-  
   "license": "MIT",
   "engines": {
     "node": ">=8"
@@ -24,7 +24,9 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/node": "^7.8.7",
-    "@types/helmet": "0.0.45"
+    "@types/helmet": "0.0.45",
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

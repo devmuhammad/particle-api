@@ -1,0 +1,41 @@
+diff --git a/node_modules/express-artisan/start.js b/node_modules/express-artisan/start.js
+index 160d60b..3327cab 100644
+--- a/node_modules/express-artisan/start.js
++++ b/node_modules/express-artisan/start.js
+@@ -35,18 +35,18 @@ const spinner = ora('📡 Starting Nodejs Server...');
+  * @returns {void}
+  */
+ (function start() {
+-  return inquirer
+-    .prompt([{
+-      type: 'list',
+-      name: 'protocol',
+-      message: 'Please specify the protocol!',
+-      choices: [...supportedProtocols],
+-    }, ])
+-    .then(({
+-      protocol
+-    }) => {
++  // return inquirer
++  //   .prompt([{
++  //     type: 'list',
++  //     name: 'protocol',
++  //     message: 'Please specify the protocol!',
++  //     choices: [...supportedProtocols],
++  //   }, ])
++  //   .then(({
++  //     protocol
++  //   }) => {
+       spinner.start();
+-      return require(protocol)
++      return require("https")
+         .createServer(
+           require(path.resolve(__dirname, process.cwd(), 'src', 'App'))
+         )
+@@ -62,5 +62,5 @@ const spinner = ora('📡 Starting Nodejs Server...');
+        `);
+           console.log(chalk.blue(`Press ${chalk.italic('CTRL-C')} to stop`));
+         });
+-    });
++    // });
+ })();
