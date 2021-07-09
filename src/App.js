@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import { carData } from './data.js';
 import cors from 'cors';
-const port = 9900
+const port = process.env.PORT || 5000
 
 // Create global app object
 const app = express();
