@@ -2,8 +2,8 @@ import path from 'path';
 import express from 'express';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
-import { carData } from './data';
-
+import { carData } from './data.js';
+import cors from 'cors';
 const port = 9900
 
 // Create global app object
@@ -13,8 +13,9 @@ const app = express();
 app.use(helmet());
 
 // Serve images, CSS files, HTML and JavaScript files in a directory named public.
-app.use('/static', express.static(path.join(__dirname, '../public')));
+// app.use('/static', express.static(path.join(__dirname, '../public')));
 
+app.use(cors());
 // parse application/json
 app.use(bodyParser.json());
 
